@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+export PREFIX=""
+if [ -d 'venv' ] ; then
+    export PREFIX="venv/bin/"
+fi
+export SOURCE_FILES="ngiriapi tests"
+
+set -x
+
+./scripts/sync-version
+${PREFIX}ruff format --check --diff $SOURCE_FILES
+# TODO: Use `[[tool.mypy.overrides]]` on the `pyproject.toml` when the mypy issue is solved:
+# github.com/python/mypy/issues/10045. Check github.com/encode/ngiriapi/pull/2180 for more info.
+${PREFIX}mypy ngiriapi
+${PREFIX}mypy tests --disable-error-code no-untyped-def --disable-error-code no-untyped-call
+${PREFIX}ruff check $SOURCE_FILES
