@@ -1,27 +1,22 @@
 <p align="center">
-  <a href="https://www.starlette.io/"><img width="420px" src="https://raw.githubusercontent.com/encode/starlette/master/docs/img/starlette.png" alt='starlette'></a>
+ 
 </p>
 <p align="center">
-    <em>✨ The little ASGI framework that shines. ✨</em>
+    <em>✨ The Smalest ASGI framework for python ✨</em>
 </p>
 <p align="center">
-<a href="https://github.com/encode/starlette/actions">
-    <img src="https://github.com/encode/starlette/workflows/Test%20Suite/badge.svg" alt="Build Status">
-</a>
-<a href="https://pypi.org/project/starlette/">
-    <img src="https://badge.fury.io/py/starlette.svg" alt="Package version">
-</a>
+
 </p>
 
 ---
 
-**Documentation**: [https://www.starlette.io/](https://www.starlette.io/)
+**Documentation**: [https://www.ngiri.co.tz/](https://www.ngiri.co.tz/)
 
 ---
 
-# Starlette
+# ngiriapi
 
-Starlette is a lightweight [ASGI][asgi] framework/toolkit,
+Ngiriapi is a lightweight [ASGI][asgi] framework/toolkit,
 which is ideal for building async web services in Python.
 
 It is production-ready, and gives you the following:
@@ -46,7 +41,7 @@ Python 3.8+
 ## Installation
 
 ```shell
-$ pip3 install starlette
+$ pip3 install ngiriapi
 ```
 
 You'll also want to install an ASGI server, such as [uvicorn](http://www.uvicorn.org/), [daphne](https://github.com/django/daphne/), or [hypercorn](https://pgjones.gitlab.io/hypercorn/).
@@ -60,9 +55,9 @@ $ pip3 install uvicorn
 **example.py**:
 
 ```python
-from starlette.applications import Starlette
-from starlette.responses import JSONResponse
-from starlette.routing import Route
+from ngiriapi.applications import ngiriapi
+from ngiriapi.responses import JSONResponse
+from ngiriapi.routing import Route
 
 
 async def homepage(request):
@@ -72,7 +67,7 @@ routes = [
     Route("/", endpoint=homepage)
 ]
 
-app = Starlette(debug=True, routes=routes)
+app = ngiriapi(debug=True, routes=routes)
 ```
 
 Then run the application using Uvicorn:
@@ -81,11 +76,11 @@ Then run the application using Uvicorn:
 $ uvicorn example:app
 ```
 
-For a more complete example, see [encode/starlette-example](https://github.com/encode/starlette-example).
+For a more complete example, see [pesaply/ngiriapi-example](https://github.com/pesaply/ngiriapi-example).
 
 ## Dependencies
 
-Starlette only requires `anyio`, and the following are optional:
+ngiriapi only requires `anyio`, and the following are optional:
 
 * [`httpx`][httpx] - Required if you want to use the `TestClient`.
 * [`jinja2`][jinja2] - Required if you want to use `Jinja2Templates`.
@@ -93,15 +88,15 @@ Starlette only requires `anyio`, and the following are optional:
 * [`itsdangerous`][itsdangerous] - Required for `SessionMiddleware` support.
 * [`pyyaml`][pyyaml] - Required for `SchemaGenerator` support.
 
-You can install all of these with `pip3 install starlette[full]`.
+You can install all of these with `pip3 install ngiriapi[full]`.
 
 ## Framework or Toolkit
 
-Starlette is designed to be used either as a complete framework, or as
+ngiriapi is designed to be used either as a complete framework, or as
 an ASGI toolkit. You can use any of its components independently.
 
 ```python
-from starlette.responses import PlainTextResponse
+from ngiriapi.responses import PlainTextResponse
 
 
 async def app(scope, receive, send):
@@ -122,7 +117,7 @@ Run uvicorn with `--reload` to enable auto-reloading on code changes.
 
 ## Modularity
 
-The modularity that Starlette is designed on promotes building re-usable
+The modularity that ngiriapi is designed on promotes building re-usable
 components that can be shared between any ASGI framework. This should enable
 an ecosystem of shared middleware and mountable applications.
 
@@ -131,10 +126,9 @@ in isolation.
 
 ---
 
-<p align="center"><i>Starlette is <a href="https://github.com/encode/starlette/blob/master/LICENSE.md">BSD licensed</a> code.<br/>Designed & crafted with care.</i></br>&mdash; ⭐️ &mdash;</p>
 
 [asgi]: https://asgi.readthedocs.io/en/latest/
-[httpx]: https://www.python-httpx.org/
+[ngiri]: https://www.ngiri.co.tz/
 [jinja2]: https://jinja.palletsprojects.com/
 [python-multipart]: https://andrew-d.github.io/python-multipart/
 [itsdangerous]: https://itsdangerous.palletsprojects.com/
