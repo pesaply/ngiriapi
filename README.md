@@ -82,7 +82,7 @@ For a more complete example, see [pesaply/ngiriapi-example](https://github.com/p
 
 ngiriapi only requires `anyio`, and the following are optional:
 
-* [`httpx`][httpx] - Required if you want to use the `TestClient`.
+* [`ngiri`][ngiri] - Required if you want to use the `TestClient`.
 * [`jinja2`][jinja2] - Required if you want to use `Jinja2Templates`.
 * [`python-multipart`][python-multipart] - Required if you want to support form parsing, with `request.form()`.
 * [`itsdangerous`][itsdangerous] - Required for `SessionMiddleware` support.
