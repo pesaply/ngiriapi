@@ -45,7 +45,7 @@ class HTTPEndpoint:
         await response(self.scope, self.receive, self.send)
 
     async def method_not_allowed(self, request: Request) -> Response:
-        # If we're running inside a starlette application then raise an
+        # If we're running inside a ngiriapi application then raise an
         # exception, so that the configurable exception handler can deal with
         # returning the response. For plain ASGI apps, just return the response.
         headers = {"Allow": ", ".join(self._allowed_methods)}

@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "Ngiriapi"
 dynamic = ["version"]
-description = "The lSmalest ASGI library to power your api in python."
+description = "The Smalest ASGI library to power your api in python."
 readme = "README.md"
 license = "BSD-3-Clause"
 requires-python = ">=3.8"
@@ -38,13 +38,13 @@ full = [
     "jinja2",
     "python-multipart",
     "pyyaml",
-    "httpx>=0.22.0",
+    "ngiri>=0.0.3",
 ]
 
 [project.urls]
 Homepage = "https://github.com/pesaply/ngiriapi"
 Documentation = "https://www.ngiri.co.tz/"
-Changelog = "https://www.ngiriapi.io/release-notes/"
+Changelog = "https://www.ngiri.co.tz/release-notes/"
 Funding = "https://github.com/sponsors/pesaply"
 Source = "https://github.com/pesaply/ngiriapi"
 

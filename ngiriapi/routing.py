@@ -636,7 +636,7 @@ class Router:
             warnings.warn(
                 "The on_startup and on_shutdown parameters are deprecated, and they "
                 "will be removed on version 1.0. Use the lifespan parameter instead. "
-                "See more about it on https://www.starlette.io/lifespan/.",
+                "See more about it on https://www.ngiri.co.tz/lifespan/.",
                 DeprecationWarning,
             )
             if lifespan:
@@ -681,7 +681,7 @@ class Router:
             await websocket_close(scope, receive, send)
             return
 
-        # If we're running inside a starlette application then raise an
+        # If we're running inside a ngiriapi application then raise an
         # exception, so that the configurable exception handler can deal with
         # returning the response. For plain ASGI apps, just return the response.
         if "app" in scope:
@@ -861,11 +861,11 @@ class Router:
         Instead you should use the following approach:
 
         >>> routes = [Route(path, endpoint=...), ...]
-        >>> app = Starlette(routes=routes)
+        >>> app = ngiriapi(routes=routes)
         """
         warnings.warn(
             "The `route` decorator is deprecated, and will be removed in version 1.0.0."
-            "Refer to https://www.starlette.io/routing/#http-routing for the recommended approach.",  # noqa: E501
+            "Refer to https://www.ngiriapi.io/routing/#http-routing for the recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
 
@@ -889,11 +889,11 @@ class Router:
         Instead you should use the following approach:
 
         >>> routes = [WebSocketRoute(path, endpoint=...), ...]
-        >>> app = Starlette(routes=routes)
+        >>> app = ngiriapi(routes=routes)
         """
         warnings.warn(
             "The `websocket_route` decorator is deprecated, and will be removed in version 1.0.0. Refer to "  # noqa: E501
-            "https://www.starlette.io/routing/#websocket-routing for the recommended approach.",  # noqa: E501
+            "https://www.ngiriapi.io/routing/#websocket-routing for the recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
 
@@ -916,7 +916,7 @@ class Router:
     def on_event(self, event_type: str) -> typing.Callable:  # type: ignore[type-arg]
         warnings.warn(
             "The `on_event` decorator is deprecated, and will be removed in version 1.0.0. "  # noqa: E501
-            "Refer to https://www.starlette.io/lifespan/ for recommended approach.",
+            "Refer to https://www.ngiriapi.io/lifespan/ for recommended approach.",
             DeprecationWarning,
         )
 

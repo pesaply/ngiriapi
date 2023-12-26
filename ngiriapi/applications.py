@@ -16,11 +16,11 @@ from ngiriapi.routing import BaseRoute, Router
 from ngiriapi.types import ASGIApp, ExceptionHandler, Lifespan, Receive, Scope, Send
 from ngiriapi.websockets import WebSocket
 
-AppType = typing.TypeVar("AppType", bound="Starlette")
+AppType = typing.TypeVar("AppType", bound="ngiriapi")
 P = ParamSpec("P")
 
 
-class Starlette:
+class ngiriapi:
     """
     Creates an application instance.
 
@@ -28,7 +28,7 @@ class Starlette:
 
     * **debug** - Boolean indicating if debug tracebacks should be returned on errors.
     * **routes** - A list of routes to serve incoming HTTP and WebSocket requests.
-    * **middleware** - A list of middleware to run for every request. A starlette
+    * **middleware** - A list of middleware to run for every request. A ngiriapi
     application will always automatically include two middleware classes.
     `ServerErrorMiddleware` is added as the very outermost middleware, to handle
     any uncaught errors occurring anywhere in the entire stack.
@@ -176,7 +176,7 @@ class Starlette:
     ) -> typing.Callable:  # type: ignore[type-arg]
         warnings.warn(
             "The `exception_handler` decorator is deprecated, and will be removed in version 1.0.0. "  # noqa: E501
-            "Refer to https://www.starlette.io/exceptions/ for the recommended approach.",  # noqa: E501
+            "Refer to https://www.ngiriapi.io/exceptions/ for the recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
 
@@ -198,11 +198,11 @@ class Starlette:
         Instead you should use the following approach:
 
         >>> routes = [Route(path, endpoint=...), ...]
-        >>> app = Starlette(routes=routes)
+        >>> app = ngiriapi(routes=routes)
         """
         warnings.warn(
             "The `route` decorator is deprecated, and will be removed in version 1.0.0. "  # noqa: E501
-            "Refer to https://www.starlette.io/routing/ for the recommended approach.",  # noqa: E501
+            "Refer to https://www.ngiri.co.tz/routing/ for the recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
 
@@ -224,11 +224,11 @@ class Starlette:
         Instead you should use the following approach:
 
         >>> routes = [WebSocketRoute(path, endpoint=...), ...]
-        >>> app = Starlette(routes=routes)
+        >>> app = ngiriapi(routes=routes)
         """
         warnings.warn(
             "The `websocket_route` decorator is deprecated, and will be removed in version 1.0.0. "  # noqa: E501
-            "Refer to https://www.starlette.io/routing/#websocket-routing for the recommended approach.",  # noqa: E501
+            "Refer to https://www.ngiri.co.tz/routing/#websocket-routing for the recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
 
@@ -244,11 +244,11 @@ class Starlette:
         Instead you should use the following approach:
 
         >>> middleware = [Middleware(...), ...]
-        >>> app = Starlette(middleware=middleware)
+        >>> app = ngiriapi(middleware=middleware)
         """
         warnings.warn(
             "The `middleware` decorator is deprecated, and will be removed in version 1.0.0. "  # noqa: E501
-            "Refer to https://www.starlette.io/middleware/#using-middleware for recommended approach.",  # noqa: E501
+            "Refer to https://www.ngiri.co.tz/middleware/#using-middleware for recommended approach.",  # noqa: E501
             DeprecationWarning,
         )
         assert (

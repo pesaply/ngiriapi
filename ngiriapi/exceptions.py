@@ -47,8 +47,8 @@ def __getattr__(name: str) -> typing.Any:  # pragma: no cover
         from ngiriapi.middleware.exceptions import ExceptionMiddleware
 
         warnings.warn(
-            f"{__deprecated__} is deprecated on `starlette.exceptions`. "
-            f"Import it from `starlette.middleware.exceptions` instead.",
+            f"{__deprecated__} is deprecated on `ngiriapi.exceptions`. "
+            f"Import it from `ngiriapi.middleware.exceptions` instead.",
             category=DeprecationWarning,
             stacklevel=3,
         )

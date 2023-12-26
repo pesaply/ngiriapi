@@ -10,7 +10,7 @@ from anyio.abc import ObjectReceiveStream, ObjectSendStream
 from ngiriapi.types import Receive, Scope, Send
 
 warnings.warn(
-    "starlette.middleware.wsgi is deprecated and will be removed in a future release. "
+    "ngiriapi.middleware.wsgi is deprecated and will be removed in a future release. "
     "Please refer to https://github.com/abersheeran/a2wsgi as a replacement.",
     DeprecationWarning,
 )

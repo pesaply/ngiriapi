@@ -48,7 +48,7 @@ class ExceptionMiddleware:
             await self.app(scope, receive, send)
             return
 
-        scope["starlette.exception_handlers"] = (
+        scope["ngiriapi.exception_handlers"] = (
             self._exception_handlers,
             self._status_handlers,
         )

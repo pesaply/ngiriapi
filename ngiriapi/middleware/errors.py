@@ -86,7 +86,7 @@ TEMPLATE = """
         <style type='text/css'>
             {styles}
         </style>
-        <title>Starlette Debugger</title>
+        <title>ngiriapi Debugger</title>
     </head>
     <body>
         <h1>500 Server Error</h1>

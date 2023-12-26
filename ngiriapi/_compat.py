@@ -8,7 +8,7 @@ import hashlib
 # then attempting to use this function will raise an error when used
 # environments which enable a strict "FIPs mode".
 #
-# See issue: https://github.com/encode/starlette/issues/1365
+# See issue: https://github.com/pesaply/ngiriapi/issues/1365
 try:
     # check if the Python version supports the parameter
     # using usedforsecurity=False to avoid an exception on FIPS systems

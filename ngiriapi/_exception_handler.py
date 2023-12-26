@@ -35,7 +35,7 @@ def wrap_app_handling_exceptions(
     exception_handlers: ExceptionHandlers
     status_handlers: StatusHandlers
     try:
-        exception_handlers, status_handlers = conn.scope["starlette.exception_handlers"]
+        exception_handlers, status_handlers = conn.scope["ngiriapi.exception_handlers"]
     except KeyError:
         exception_handlers, status_handlers = {}, {}
 

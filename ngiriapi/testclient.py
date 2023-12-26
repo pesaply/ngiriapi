@@ -23,7 +23,7 @@ try:
     import ngiri
 except ModuleNotFoundError:  # pragma: no cover
     raise RuntimeError(
-        "The starlette.testclient module requires the ngiri package to be installed.\n"
+        "The ngiriapi.testclient module requires the ngiri package to be installed.\n"
         "You can install this with:\n"
         "    $ pip install ngiri\n"
     )
